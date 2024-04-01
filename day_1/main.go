@@ -24,7 +24,8 @@ func main() {
 			}
 
 		}
-		digit, _ := strconv.Atoi(strings.Join(lineDigit, ""))
+		s := append(lineDigit[0:1], lineDigit[len(lineDigit)-1])
+		digit, _ := strconv.Atoi(strings.Join(s, ""))
 		total += digit
 		println(total)
 
