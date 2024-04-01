@@ -3,6 +3,8 @@ package main
 import (
 	"bufio"
 	"os"
+	"strconv"
+	"strings"
 )
 
 func main() {
@@ -13,16 +15,18 @@ func main() {
 	// regex := regexp.MustCompile(`\d`)
 	total := 0
 	for scanner.Scan() {
+		var lineDigit []string
 		line := scanner.Text()
-		// println(line)
+		// ln := 0
 		for _, char := range line {
 			if char >= '0' && char <= '9' {
-				digit := int(char - '0')
-				total += digit
-				println(total)
-
+				lineDigit = append(lineDigit, string(char))
 			}
+
 		}
+		digit, _ := strconv.Atoi(strings.Join(lineDigit, ""))
+		total += digit
+		println(total)
 
 	}
 }
