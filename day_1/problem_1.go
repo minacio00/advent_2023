@@ -1,4 +1,4 @@
-package main
+package day_1
 
 import (
 	"bufio"
@@ -7,7 +7,7 @@ import (
 	"strings"
 )
 
-func main() {
+func Problem_1() {
 	data, _ := os.Open("./input.txt")
 	defer data.Close()
 
